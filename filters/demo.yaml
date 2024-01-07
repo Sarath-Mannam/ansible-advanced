@@ -13,7 +13,7 @@
   
   - name: Printing undefined variable
     debug:
-      msg: "Leveraging new skill sets {{ COURSE | default(DevOps) }}"
+      msg: "Leveraging new skill sets {{ COURSE | default('DevOps') }}"
 
 # Variable can be declared at Play level, task level, Inventory, from seperate file (or) from prompt.
 # But here i didn't set it from where variable is defined
