@@ -1,8 +1,12 @@
 - name: Demo on filters
   hosts: localhost
   vars: 
-    NAME: mannam sarath
+    NAME: MaNnaM saRatH 
   tasks:
   - name: convert into upper case
     debug:
       msg: "Hello {{ NAME | upper }}"
+
+  - name: convert into lower case
+    debug:
+      msg: "Hello {{ NAME | lower }}"
