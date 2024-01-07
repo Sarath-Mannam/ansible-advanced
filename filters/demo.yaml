@@ -1,7 +1,8 @@
 - name: Demo on filters
   hosts: localhost
   vars: 
-    NAME: MaNnaM saRatH 
+    NAME: MaNnaM saRatH
+    website: https://github.com/Sarath-Mannam
   tasks:
   - name: convert into upper case
     debug:
@@ -18,3 +19,7 @@
 # Variable can be declared at Play level, task level, Inventory, from seperate file (or) from prompt.
 # But here i didn't set it from where variable is defined
 # now DevOps value has defined to Course variable  
+
+  - name: extract hostname
+    debug:
+      msg: "{{ website | urlsplit('hostname') }}"  #  from website it will get hostname
