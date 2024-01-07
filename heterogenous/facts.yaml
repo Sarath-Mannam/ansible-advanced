@@ -1,8 +1,20 @@
 - name: understand facts
-  hosts: centos
+  hosts: centos:ubuntu
   tasks:
   - name: print all the facts
     ansible.builtin.debug:
       msg: "All Facts: {{ansible_facts}}"
-      
+
+    # There is no guarantee all the modules are available in ansible for all the tasks
+    # In case when you working on ansible project then you have to work with multiple distributions 
+    # In some cases you dont have a ansible module then we have to write conditions
+
+  - name: add user ubuntu
+    ansible.builtin.command: adduser mannam
+    when: ansible_facts['distribution'] == "Ubuntu"
+
+  - name: add user centos
+    ansible.builtin.command: useradd mannam
+    when: ansible_facts['distribution'] == "Centos"
+
 
