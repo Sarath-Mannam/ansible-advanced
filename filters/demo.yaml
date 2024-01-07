@@ -10,3 +10,9 @@
   - name: convert into lower case
     debug:
       msg: "Hello {{ NAME | lower }}"
+  
+  - name: Printing undefined variable
+    debug:
+      msg: "Leveraging new skill sets {{ COURSE }}"
+
+# Variable can be declared at Play level, task level, Inventory, from seperate file (or) from prompt  
