@@ -3,6 +3,7 @@
   vars: 
     NAME: MaNnaM saRatH
     website: https://github.com/Sarath-Mannam
+    Greeting: In DevOps, Terraform excites more with creation of Infra 
   tasks:
   - name: convert into upper case
     debug:
@@ -23,3 +24,7 @@
   - name: extract hostname
     debug:
       msg: "{{ website | urlsplit('hostname') }}"  #  from website it will get hostname
+
+  - name: split 
+    debug: 
+      msg: "{{ Greeting | split(",") }}"
